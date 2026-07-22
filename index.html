@@ -142,6 +142,7 @@ nav.scrolled{background:rgba(27,67,50,.95);backdrop-filter:blur(20px);padding:.8
 .menu-card-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(27,67,50,.55),transparent 50%)}
 .menu-card-body{padding:1.4rem 1.5rem 1.5rem}
 .menu-card-name{font-family:var(--font-display);font-size:1.12rem;font-weight:700;color:#fff}
+.menu-card-name .amh{display:block;font-family:var(--font-amharic);font-size:.8rem;font-weight:400;color:var(--gold-light);opacity:.72;margin-top:.25rem}
 .menu-card-desc{color:rgba(255,255,255,.55);font-size:.82rem;line-height:1.6;margin-top:.5rem}
 .menu-card-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:1.1rem;padding-top:.9rem;border-top:1px solid rgba(255,255,255,.08)}
 .menu-card-price{font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--gold)}
@@ -185,6 +186,7 @@ nav.scrolled{background:rgba(27,67,50,.95);backdrop-filter:blur(20px);padding:.8
 .menu-item:last-child{border-bottom:none}
 .menu-item .nm{color:rgba(255,255,255,.9);font-size:.92rem;font-weight:500;line-height:1.35}
 .menu-item .nm small{display:block;color:rgba(255,255,255,.4);font-size:.71rem;font-weight:400;margin-top:.15rem;font-style:italic}
+.menu-item .nm small.amh{font-family:var(--font-amharic);color:var(--gold-light);opacity:.62;font-style:normal;font-size:.76rem;margin-top:.18rem}
 .menu-item .nm .fire{margin-left:.35rem}
 .menu-item .pr{color:var(--gold);font-family:var(--font-display);font-weight:700;font-size:1.02rem;white-space:nowrap}
 .menu-item .pr.ask{color:rgba(255,255,255,.4);font-size:.78rem;font-style:italic;font-family:var(--font-body);font-weight:500}
@@ -435,7 +437,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.5);padding:4rem 3rem 2rem}
       <div class="menu-card">
         <div class="menu-card-photo"><img src="https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=700&q=75&fm=jpg" alt="Wina Special smoothie" loading="lazy"></div>
         <div class="menu-card-body">
-          <div class="menu-card-name">Wina Special</div>
+          <div class="menu-card-name">Wina Special<span class="amh">ዊና ስፔሻል</span></div>
           <div class="menu-card-desc">Our signature layered smoothie — the taste that made Wina famous across Addis.</div>
           <div class="menu-card-bottom"><span class="menu-card-price">ETB 280</span><span class="menu-card-tag">Signature</span></div>
         </div>
@@ -443,7 +445,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.5);padding:4rem 3rem 2rem}
       <div class="menu-card">
         <div class="menu-card-photo"><img src="https://images.unsplash.com/photo-1546173159-315724a31696?w=700&q=75&fm=jpg" alt="Jambo juice" loading="lazy"></div>
         <div class="menu-card-body">
-          <div class="menu-card-name">Jambo Juice</div>
+          <div class="menu-card-name">Jambo Juice<span class="amh">ጃምቦ ጁስ</span></div>
           <div class="menu-card-desc">Egg, papaya, mango, pineapple &amp; avocado in one mighty glass. Unbeatable value.</div>
           <div class="menu-card-bottom"><span class="menu-card-price">ETB 190</span><span class="menu-card-tag">Best Value</span></div>
         </div>
@@ -451,15 +453,15 @@ footer{background:var(--dark);color:rgba(255,255,255,.5);padding:4rem 3rem 2rem}
       <div class="menu-card">
         <div class="menu-card-photo"><img src="https://images.unsplash.com/photo-1610970881699-44a5587cabec?w=700&q=75&fm=jpg" alt="Classic mojito" loading="lazy"></div>
         <div class="menu-card-body">
-          <div class="menu-card-name">Classic Mojito</div>
+          <div class="menu-card-name">Classic Mojito<span class="amh">ክላሲክ ሞሂቶ</span></div>
           <div class="menu-card-desc">Cool, minty and refreshing — the perfect pick-me-up on a warm Addis afternoon.</div>
-          <div class="menu-card-bottom"><span class="menu-card-price">ETB 320</span><span class="menu-card-tag">Refreshing</span></div>
+          <div class="menu-card-bottom"><span class="menu-card-price">ETB 200</span><span class="menu-card-tag">Refreshing</span></div>
         </div>
       </div>
       <div class="menu-card">
         <div class="menu-card-photo"><img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=700&q=75&fm=jpg" alt="Wina Double Special Burger" loading="lazy"></div>
         <div class="menu-card-body">
-          <div class="menu-card-name">Wina Double Special Burger</div>
+          <div class="menu-card-name">Wina Double Special Burger<span class="amh">ዊና ደብል ስፔሻል በርገር</span></div>
           <div class="menu-card-desc">Double the stack, double the sauce — our biggest, boldest burger yet.</div>
           <div class="menu-card-bottom"><span class="menu-card-price">ETB 740</span><span class="menu-card-tag">Loaded</span></div>
         </div>
@@ -467,15 +469,15 @@ footer{background:var(--dark);color:rgba(255,255,255,.5);padding:4rem 3rem 2rem}
       <div class="menu-card">
         <div class="menu-card-photo"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=700&q=75&fm=jpg" alt="Wina Special Pizza" loading="lazy"></div>
         <div class="menu-card-body">
-          <div class="menu-card-name">Wina Special Pizza</div>
+          <div class="menu-card-name">Wina Special Pizza<span class="amh">ዊና ስፔሻል ፒዛ</span></div>
           <div class="menu-card-desc">The house masterpiece — loaded edge to edge with premium toppings.</div>
-          <div class="menu-card-bottom"><span class="menu-card-price">ETB 950</span><span class="menu-card-tag">Chef's Pick</span></div>
+          <div class="menu-card-bottom"><span class="menu-card-price">ETB 450</span><span class="menu-card-tag">Chef's Pick</span></div>
         </div>
       </div>
       <div class="menu-card">
         <div class="menu-card-photo"><img src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=700&q=75&fm=jpg" alt="Strawberry milk shake" loading="lazy"></div>
         <div class="menu-card-body">
-          <div class="menu-card-name">Strawberry Milk Shake</div>
+          <div class="menu-card-name">Strawberry Milk Shake<span class="amh">ስትሮቤሪ በወተት</span></div>
           <div class="menu-card-desc">Thick, creamy and made with real strawberries. A crowd favorite.</div>
           <div class="menu-card-bottom"><span class="menu-card-price">ETB 250</span><span class="menu-card-tag">Creamy</span></div>
         </div>
@@ -499,132 +501,132 @@ footer{background:var(--dark);color:rgba(255,255,255,.5);padding:4rem 3rem 2rem}
     <div class="menu-price-list reveal">
 
       <div class="menu-block" id="cat-smoothies">
-        <div class="menu-block-head"><span class="ic">🥤</span><h3>Smoothies &amp; Special Juice</h3></div>
-        <div class="menu-item"><span class="nm">Wu Protein Juice</span><span class="pr">320</span></div>
-        <div class="menu-item"><span class="nm">Wina Special Spruce Juice</span><span class="pr">300</span></div>
-        <div class="menu-item"><span class="nm">Wina Special <span class="fire">🔥</span><small>signature layered smoothie</small></span><span class="pr">280</span></div>
-        <div class="menu-item"><span class="nm">Wina Smoothies</span><span class="pr">250</span></div>
-        <div class="menu-item"><span class="nm">Peanut Butter Smoothie</span><span class="pr">250</span></div>
-        <div class="menu-item"><span class="nm">Flax Seed &amp; Banana Smoothie</span><span class="pr">250</span></div>
-        <div class="menu-item"><span class="nm">All Juice with Jambo</span><span class="pr">250</span></div>
-        <div class="menu-item"><span class="nm">Classic Mojito</span><span class="pr">320</span></div>
-        <div class="menu-item"><span class="nm">Watermelon Mojito</span><span class="pr">200</span></div>
-        <div class="menu-item"><span class="nm">Strawberry Mojito</span><span class="pr">200</span></div>
+        <div class="menu-block-head"><span class="ic">🥤</span><h3>Smoothies &amp; Special Juice</h3><span class="amh">ስሙዚ እና ስፔሻል ጁስ</span></div>
+        <div class="menu-item"><span class="nm">Wina Protein Juice<small class="amh">ዊና ፕሮቲን ጁስ</small></span><span class="pr">320</span></div>
+        <div class="menu-item"><span class="nm">Wina Special Spruce Juice<small class="amh">ዊና ስፔሻል ስፕሩስ ጁስ</small></span><span class="pr">300</span></div>
+        <div class="menu-item"><span class="nm">Wina Special <span class="fire">🔥</span><small class="amh">ዊና ስፔሻል</small><small>signature layered smoothie</small></span><span class="pr">280</span></div>
+        <div class="menu-item"><span class="nm">Wina Smoothies<small class="amh">ዊና ስሙዚ</small></span><span class="pr">250</span></div>
+        <div class="menu-item"><span class="nm">Peanut Butter Smoothie<small class="amh">ፒነት በተር ስሙዚ</small></span><span class="pr">250</span></div>
+        <div class="menu-item"><span class="nm">Flax Seed &amp; Banana Smoothie<small class="amh">ፍላክስ ሲድ እና ባናና ስሙዚ</small></span><span class="pr">250</span></div>
+        <div class="menu-item"><span class="nm">All Juice with Jambo<small class="amh">ኦል ጁስ ከጃምቦ ጋር</small></span><span class="pr">520</span></div>
+        <div class="menu-item"><span class="nm">Classic Mojito<small class="amh">ክላሲክ ሞሂቶ</small></span><span class="pr">200</span></div>
+        <div class="menu-item"><span class="nm">Watermelon Mojito<small class="amh">ዋተርሜሎን ሞሂቶ</small></span><span class="pr">200</span></div>
+        <div class="menu-item"><span class="nm">Strawberry Mojito<small class="amh">ስትሮቤሪ ሞሂቶ</small></span><span class="pr">200</span></div>
       </div>
 
       <div class="menu-block" id="cat-seasonal">
-        <div class="menu-block-head"><span class="ic">🍊</span><h3>Seasonal Juice</h3></div>
-        <div class="menu-item"><span class="nm">Jambo Juice <span class="fire">⭐</span><small>egg, papaya, mango, pineapple &amp; avocado</small></span><span class="pr">190</span></div>
-        <div class="menu-item"><span class="nm">Orange</span><span class="pr">350</span></div>
-        <div class="menu-item"><span class="nm">Mixed Orange</span><span class="pr">180</span></div>
-        <div class="menu-item"><span class="nm">Banana Milk Shake</span><span class="pr">280</span></div>
-        <div class="menu-item"><span class="nm">Strawberry Juice</span><span class="pr">220</span></div>
-        <div class="menu-item"><span class="nm">Strawberry Milk Shake</span><span class="pr">250</span></div>
-        <div class="menu-item"><span class="nm">Watermelon</span><span class="pr">250</span></div>
-        <div class="menu-item"><span class="nm">Papaya with Flax</span><span class="pr">250</span></div>
-        <div class="menu-item"><span class="nm">Flu Juice</span><span class="pr ask">In-store</span></div>
-        <div class="menu-item"><span class="nm">Fruit Salad</span><span class="pr">280</span></div>
+        <div class="menu-block-head"><span class="ic">🍊</span><h3>Seasonal Juice</h3><span class="amh">ወቅታዊ ጁሶች</span></div>
+        <div class="menu-item"><span class="nm">Jambo Juice <span class="fire">⭐</span><small class="amh">ጃምቦ ጁስ</small><small>egg, papaya, mango, pineapple &amp; avocado</small></span><span class="pr">190</span></div>
+        <div class="menu-item"><span class="nm">Orange<small class="amh">ብርቱካን ጁስ</small></span><span class="pr">350</span></div>
+        <div class="menu-item"><span class="nm">Lemon Juice<small class="amh">የለሚ ጁስ</small></span><span class="pr">180</span></div>
+        <div class="menu-item"><span class="nm">Mixed Orange<small class="amh">ሚክስድ ኦሬንጅ</small></span><span class="pr">280</span></div>
+        <div class="menu-item"><span class="nm">Banana Milk Shake<small class="amh">ሙዝ በወተት</small></span><span class="pr">220</span></div>
+        <div class="menu-item"><span class="nm">Strawberry Juice<small class="amh">ስትሮቤሪ ጁስ</small></span><span class="pr">250</span></div>
+        <div class="menu-item"><span class="nm">Strawberry Milk Shake<small class="amh">ስትሮቤሪ በወተት</small></span><span class="pr">250</span></div>
+        <div class="menu-item"><span class="nm">Watermelon<small class="amh">ሀብሀብ</small></span><span class="pr">200</span></div>
+        <div class="menu-item"><span class="nm">Papaya with Flax<small class="amh">ፓፓያ በተልባ</small></span><span class="pr">250</span></div>
+        <div class="menu-item"><span class="nm">Flu Juice<small class="amh">የንንጭ ጁስ</small></span><span class="pr">250</span></div>
+        <div class="menu-item"><span class="nm">Fruit Salad<small class="amh">ፍሩት ሳላድ</small></span><span class="pr">280</span></div>
       </div>
 
       <div class="menu-block" id="cat-vegetable">
-        <div class="menu-block-head"><span class="ic">🥬</span><h3>Vegetable &amp; Fasting</h3><span class="amh">ጾም</span></div>
-        <div class="menu-item"><span class="nm">Wina Special Vegetable Fasting</span><span class="pr">480</span></div>
-        <div class="menu-item"><span class="nm">Special Vegetable Fasting <small>seasonal</small></span><span class="pr">720</span></div>
-        <div class="menu-item"><span class="nm">Vegetable with Olive Oil <small>seasonal</small></span><span class="pr">750</span></div>
-        <div class="menu-item"><span class="nm">Vegetable with Olive Oil</span><span class="pr">350</span></div>
-        <div class="menu-item"><span class="nm">Vegetable with Small Tuna</span><span class="pr">370</span></div>
-        <div class="menu-item"><span class="nm">Vegetable with Mayonnaise</span><span class="pr">590</span></div>
-        <div class="menu-item"><span class="nm">Vegetable with Fasting Mayonnaise</span><span class="pr">380</span></div>
-        <div class="menu-item"><span class="nm">Special Cooked Vegetable</span><span class="pr">380</span></div>
+        <div class="menu-block-head"><span class="ic">🥬</span><h3>Vegetable &amp; Fasting</h3><span class="amh">አትክልት · ጾም</span></div>
+        <div class="menu-item"><span class="nm">Arsenal <span class="fire">⭐</span><small class="amh">እርሰናል</small><small>the famous layered vegetable bowl</small></span><span class="pr">750</span></div>
+        <div class="menu-item"><span class="nm">Wina Special Vegetable Fasting<small class="amh">ዊና እስፔሻል አትክልት ጾም</small></span><span class="pr">480</span></div>
+        <div class="menu-item"><span class="nm">Wina Special Vegetable with Chicken &amp; Tuna<small class="amh">ዊና እስፔሻል አትክልት በቱና እና ችከን</small></span><span class="pr">720</span></div>
+        <div class="menu-item"><span class="nm">Vegetable with Small Tuna<small class="amh">አትክልት በትንሽ ቱና</small></span><span class="pr">590</span></div>
+        <div class="menu-item"><span class="nm">Vegetable with Mayonnaise<small class="amh">አትክልት በማዮኒዝ</small></span><span class="pr">380</span></div>
+        <div class="menu-item"><span class="nm">Vegetable with Fasting Mayonnaise<small class="amh">አትክልት በጾም ማዮኒዝ</small></span><span class="pr">380</span></div>
+        <div class="menu-item"><span class="nm">Special Cooked Vegetable<small class="amh">እስፔሻል የበሰለ አትክልት</small></span><span class="pr">380</span></div>
+        <div class="menu-item"><span class="nm">Vegetable with Olive Oil<small class="amh">አትክልት ከወይራ ዘይት ጋር</small></span><span class="pr">350</span></div>
       </div>
 
       <div class="menu-block" id="cat-wraps">
-        <div class="menu-block-head"><span class="ic">🌯</span><h3>Wraps</h3></div>
-        <div class="menu-item"><span class="nm">Beef Wrap</span><span class="pr">490</span></div>
-        <div class="menu-item"><span class="nm">Pan Chicken Wrap</span><span class="pr">520</span></div>
-        <div class="menu-item"><span class="nm">Tuna &amp; Cheese Wrap</span><span class="pr">580</span></div>
-        <div class="menu-item"><span class="nm">Vegetable Wrap</span><span class="pr">300</span></div>
-        <div class="menu-item"><span class="nm">Avocado Wrap</span><span class="pr">350</span></div>
+        <div class="menu-block-head"><span class="ic">🌯</span><h3>Wraps</h3><span class="amh">ሸዋርማ · ራፕ</span></div>
+        <div class="menu-item"><span class="nm">Beef Wrap<small class="amh">ቢፍ ራፕ</small></span><span class="pr">400</span></div>
+        <div class="menu-item"><span class="nm">Pan Chicken Wrap<small class="amh">ፓን ችከን ራፕ</small></span><span class="pr">520</span></div>
+        <div class="menu-item"><span class="nm">Tuna &amp; Cheese Wrap<small class="amh">ቱና እና ችስ ራፕ</small></span><span class="pr">580</span></div>
+        <div class="menu-item"><span class="nm">Vegetable Wrap<small class="amh">ቬጀታብል ራፕ</small></span><span class="pr">300</span></div>
+        <div class="menu-item"><span class="nm">Avocado Wrap<small class="amh">አቮካዶ ራፕ</small></span><span class="pr">350</span></div>
       </div>
 
       <div class="menu-block" id="cat-spaghetti">
-        <div class="menu-block-head"><span class="ic">🍝</span><h3>Spaghetti &amp; Rice</h3></div>
-        <div class="menu-item"><span class="nm">Spaghetti with Vegetable</span><span class="pr">300</span></div>
-        <div class="menu-item"><span class="nm">Spaghetti with Tomato</span><span class="pr">300</span></div>
-        <div class="menu-item"><span class="nm">Spaghetti with Tuna</span><span class="pr">300</span></div>
-        <div class="menu-item"><span class="nm">Spaghetti</span><span class="pr">300</span></div>
-        <div class="menu-item"><span class="nm">Rice with Vegetable <small>collection</small></span><span class="pr">410</span></div>
-        <div class="menu-item"><span class="nm">Rice with Tomato</span><span class="pr">300</span></div>
-        <div class="menu-item"><span class="nm">Rice with Tuna</span><span class="pr">300</span></div>
-        <div class="menu-item"><span class="nm">Rice with Meat</span><span class="pr">300</span></div>
-        <div class="menu-item"><span class="nm">Rice with Cooked Vegetable</span><span class="pr">340</span></div>
-        <div class="menu-item"><span class="nm">Wina Special Collection with Vegetable</span><span class="pr">340</span></div>
-        <div class="menu-item"><span class="nm">Wina Special Collection</span><span class="pr">680</span></div>
-        <div class="menu-item"><span class="nm">Wina Trio <small>firfir, spaghetti &amp; salad</small></span><span class="pr">400</span></div>
+        <div class="menu-block-head"><span class="ic">🍝</span><h3>Spaghetti &amp; Rice</h3><span class="amh">ፓስታ እና ሩዝ</span></div>
+        <div class="menu-item"><span class="nm">Spaghetti with Vegetable<small class="amh">ፓስታ በአትክልት</small></span><span class="pr">300</span></div>
+        <div class="menu-item"><span class="nm">Spaghetti with Tomato<small class="amh">ፓስታ በቲማቲም</small></span><span class="pr">300</span></div>
+        <div class="menu-item"><span class="nm">Spaghetti with Tuna<small class="amh">ፓስታ በቱና</small></span><span class="pr">580</span></div>
+        <div class="menu-item"><span class="nm">Spaghetti with Meat<small class="amh">ፓስታ በስጋ</small></span><span class="pr">410</span></div>
+        <div class="menu-item"><span class="nm">Rice with Tomato<small class="amh">ሩዝ በቲማቲም</small></span><span class="pr">300</span></div>
+        <div class="menu-item"><span class="nm">Rice with Tuna<small class="amh">ሩዝ በቱና</small></span><span class="pr">580</span></div>
+        <div class="menu-item"><span class="nm">Rice with Meat<small class="amh">ሩዝ በስጋ</small></span><span class="pr">410</span></div>
+        <div class="menu-item"><span class="nm">Rice with Cooked Vegetable<small class="amh">ሩዝ በበሰለ አትክልት</small></span><span class="pr">300</span></div>
+        <div class="menu-item"><span class="nm">Wina Special Collection with Vegetable<small class="amh">ዊና እስፔሻል ኮሌክሽን በአትክልት</small></span><span class="pr">340</span></div>
+        <div class="menu-item"><span class="nm">Wina Special Collection<small class="amh">ዊና እስፔሻል ኮሌክሽን</small></span><span class="pr">680</span></div>
+        <div class="menu-item"><span class="nm">Wina Trio <span class="fire">🔥</span><small class="amh">ዊና ትሪዮ</small><small>firfir, spaghetti &amp; salad</small></span><span class="pr">400</span></div>
       </div>
 
       <div class="menu-block" id="cat-burgers">
-        <div class="menu-block-head"><span class="ic">🍔</span><h3>Burgers &amp; Sandwiches</h3></div>
-        <div class="menu-item"><span class="nm">Beef Burger</span><span class="pr">390</span></div>
-        <div class="menu-item"><span class="nm">Beef &amp; Cheese Burger</span><span class="pr ask">In-store</span></div>
-        <div class="menu-item"><span class="nm">Wina Burger</span><span class="pr">440</span></div>
-        <div class="menu-item"><span class="nm">Tuna Sandwich</span><span class="pr">500</span></div>
-        <div class="menu-item"><span class="nm">Club Sandwich</span><span class="pr">500</span></div>
-        <div class="menu-item"><span class="nm">Club Sandwich with Tuna</span><span class="pr">670</span></div>
-        <div class="menu-item"><span class="nm">Club Sandwich with Chicken</span><span class="pr">570</span></div>
-        <div class="menu-item"><span class="nm">Wina Double Special Burger <span class="fire">🔥</span></span><span class="pr">740</span></div>
-        <div class="menu-item"><span class="nm">French Fries</span><span class="pr">300</span></div>
+        <div class="menu-block-head"><span class="ic">🍔</span><h3>Burgers &amp; Sandwiches</h3><span class="amh">በርገር</span></div>
+        <div class="menu-item"><span class="nm">Beef Burger<small class="amh">ቢፍ በርገር</small></span><span class="pr">390</span></div>
+        <div class="menu-item"><span class="nm">Beef &amp; Cheese Burger<small class="amh">ቢፍ ኤንድ ችዝ በርገር</small></span><span class="pr">440</span></div>
+        <div class="menu-item"><span class="nm">Wina Burger<small class="amh">ዊና በርገር</small></span><span class="pr">500</span></div>
+        <div class="menu-item"><span class="nm">Tuna Sandwich<small class="amh">ቱና ሳንድዊች</small></span><span class="pr">570</span></div>
+        <div class="menu-item"><span class="nm">Club Sandwich with Tuna<small class="amh">ክለብ ሳንድዊች ከቱና ጋር</small></span><span class="pr">580</span></div>
+        <div class="menu-item"><span class="nm">Club Sandwich with Chicken<small class="amh">ክለብ ሳንድዊች ከችክን ጋር</small></span><span class="pr">670</span></div>
+        <div class="menu-item"><span class="nm">Wina Double Special Burger <span class="fire">🔥</span><small class="amh">ዊና ደብል ስፔሻል በርገር</small></span><span class="pr">740</span></div>
+        <div class="menu-item"><span class="nm">French Fries<small class="amh">ፍሬንች ፍራይ</small></span><span class="pr">300</span></div>
       </div>
 
       <div class="menu-block" id="cat-chicken">
-        <div class="menu-block-head"><span class="ic">🍗</span><h3>Fried Chicken</h3></div>
-        <div class="menu-item"><span class="nm">Chicken Drum Stick</span><span class="pr">850</span></div>
-        <div class="menu-item"><span class="nm">Chicken Wing</span><span class="pr">690</span></div>
-        <div class="menu-item"><span class="nm">Chicken Nugget</span><span class="pr">760</span></div>
-        <div class="menu-item"><span class="nm">Chicken Steak Sandwich</span><span class="pr">760</span></div>
-        <div class="menu-item"><span class="nm">Pesto Chicken Sandwich</span><span class="pr">620</span></div>
+        <div class="menu-block-head"><span class="ic">🍗</span><h3>Fried Chicken</h3><span class="amh">የተጠበሰ ዶሮ</span></div>
+        <div class="menu-item"><span class="nm">Chicken Drum Stick<small class="amh">የዶሮ እግር</small></span><span class="pr">850</span></div>
+        <div class="menu-item"><span class="nm">Chicken Wing<small class="amh">የዶሮ ክንፍ</small></span><span class="pr">690</span></div>
+        <div class="menu-item"><span class="nm">Chicken Nugget<small class="amh">የተቆራረጠ ዶሮ</small></span><span class="pr">760</span></div>
+        <div class="menu-item"><span class="nm">Chicken Steak Sandwich<small class="amh">ስቴክ ችክን ሳንድዊች</small></span><span class="pr">760</span></div>
+        <div class="menu-item"><span class="nm">Pesto Chicken Sandwich<small class="amh">ፔስቶ ችክን ሳንድዊች</small></span><span class="pr">620</span></div>
       </div>
 
       <div class="menu-block" id="cat-pizza">
-        <div class="menu-block-head"><span class="ic">🍕</span><h3>Pizza</h3></div>
-        <div class="menu-item"><span class="nm">Beef Lover Pizza</span><span class="pr">790</span></div>
-        <div class="menu-item"><span class="nm">Chicken Lover Pizza</span><span class="pr">810</span></div>
-        <div class="menu-item"><span class="nm">Tuna Pizza</span><span class="pr">850</span></div>
-        <div class="menu-item"><span class="nm">Margarita Pizza</span><span class="pr">560</span></div>
-        <div class="menu-item"><span class="nm">Vegetarian Pizza</span><span class="pr">560</span></div>
-        <div class="menu-item"><span class="nm">Wina Special Pizza <span class="fire">🔥</span></span><span class="pr">950</span></div>
-        <div class="menu-item"><span class="nm">Pesto Chicken Pizza</span><span class="pr">850</span></div>
+        <div class="menu-block-head"><span class="ic">🍕</span><h3>Pizza</h3><span class="amh">ፒዛ</span></div>
+        <div class="menu-item"><span class="nm">Beef Lover Pizza<small class="amh">ቢፍ ላቨር ፒዛ</small></span><span class="pr">790</span></div>
+        <div class="menu-item"><span class="nm">Chicken Lover Pizza<small class="amh">ችክን ላቨር ፒዛ</small></span><span class="pr">790</span></div>
+        <div class="menu-item"><span class="nm">Tuna Pizza<small class="amh">ቱና ፒዛ</small></span><span class="pr">810</span></div>
+        <div class="menu-item"><span class="nm">Margarita Pizza<small class="amh">ማርገሪታ ፒዛ</small></span><span class="pr">650</span></div>
+        <div class="menu-item"><span class="nm">Vegetarian Pizza<small class="amh">ቬጀቴብል ፒዛ</small></span><span class="pr">540</span></div>
+        <div class="menu-item"><span class="nm">Wina Special Pizza <span class="fire">🔥</span><small class="amh">ዊና ስፔሻል ፒዛ</small></span><span class="pr">450</span></div>
+        <div class="menu-item"><span class="nm">Pesto Chicken Pizza<small class="amh">ፔስቶ ችክን ፒዛ</small></span><span class="pr">850</span></div>
       </div>
 
       <div class="menu-block" id="cat-kids">
-        <div class="menu-block-head"><span class="ic">🧒</span><h3>Kids Menu</h3></div>
-        <div class="menu-item"><span class="nm">Junior Burger</span><span class="pr">390</span></div>
-        <div class="menu-item"><span class="nm">Mini Chicken Pizza</span><span class="pr">550</span></div>
-        <div class="menu-item"><span class="nm">Mini Beef Pizza</span><span class="pr">550</span></div>
-        <div class="menu-item"><span class="nm">Mini Margarita Pizza</span><span class="pr">390</span></div>
-        <div class="menu-item"><span class="nm">Pan Cake</span><span class="pr">400</span></div>
+        <div class="menu-block-head"><span class="ic">🧒</span><h3>Kids Menu</h3><span class="amh">የህፃናት ሜኑ</span></div>
+        <div class="menu-item"><span class="nm">Junior Burger<small class="amh">ጁኒየር በርገር</small></span><span class="pr">390</span></div>
+        <div class="menu-item"><span class="nm">Mini Chicken Pizza<small class="amh">ሚኒ ችክን ፒዛ</small></span><span class="pr">550</span></div>
+        <div class="menu-item"><span class="nm">Mini Beef Pizza<small class="amh">ሚኒ ቢፍ ፒዛ</small></span><span class="pr">550</span></div>
+        <div class="menu-item"><span class="nm">Mini Margarita Pizza<small class="amh">ሚኒ ማርገሪታ ፒዛ</small></span><span class="pr">390</span></div>
+        <div class="menu-item"><span class="nm">Pan Cake<small class="amh">ፓን ኬክ</small></span><span class="pr">400</span></div>
       </div>
 
       <div class="menu-block" id="cat-traditional">
-        <div class="menu-block-head"><span class="ic">🇪🇹</span><h3>Traditional Dishes</h3><span class="amh">ባህላዊ</span></div>
-        <div class="menu-item"><span class="nm">Fantis Firfir</span><span class="pr">260</span></div>
-        <div class="menu-item"><span class="nm">Tuna Firfir</span><span class="pr ask">In-store</span></div>
-        <div class="menu-item"><span class="nm">Firfir with Butter</span><span class="pr">420</span></div>
-        <div class="menu-item"><span class="nm">Quanta Firfir</span><span class="pr">450</span></div>
-        <div class="menu-item"><span class="nm">Quanta Firfir with Dirkosh</span><span class="pr">490</span></div>
-        <div class="menu-item"><span class="nm">Shiro with Butter</span><span class="pr">350</span></div>
-        <div class="menu-item"><span class="nm">Tegabino</span><span class="pr ask">In-store</span></div>
-        <div class="menu-item"><span class="nm">Vegetable Firfir</span><span class="pr">280</span></div>
-        <div class="menu-item"><span class="nm">Fried Fish</span><span class="pr">320</span></div>
-        <div class="menu-item"><span class="nm">Fish Goulash</span><span class="pr">440</span></div>
+        <div class="menu-block-head"><span class="ic">🇪🇹</span><h3>Traditional Dishes</h3><span class="amh">የባህል ምግቦች</span></div>
+        <div class="menu-item"><span class="nm">Fasting Firfir<small class="amh">ጾም ፍርፍር</small></span><span class="pr">260</span></div>
+        <div class="menu-item"><span class="nm">Firfir with Butter<small class="amh">ፍርፍር በቅቤ</small></span><span class="pr">340</span></div>
+        <div class="menu-item"><span class="nm">Tibs Firfir<small class="amh">ጥብስ ፍርፍር</small></span><span class="pr">330</span></div>
+        <div class="menu-item"><span class="nm">Quanta Firfir<small class="amh">ቋንጣ ፍርፍር</small></span><span class="pr">420</span></div>
+        <div class="menu-item"><span class="nm">Quanta Firfir with Dirkosh<small class="amh">ቋንጣ ፍርፍር በድርኮሽ</small></span><span class="pr">450</span></div>
+        <div class="menu-item"><span class="nm">Shiro with Butter<small class="amh">ሽሮ በቅቤ</small></span><span class="pr">470</span></div>
+        <div class="menu-item"><span class="nm">Bozena Shiro<small class="amh">ቦዘና ሽሮ</small></span><span class="pr">350</span></div>
+        <div class="menu-item"><span class="nm">Tegabino<small class="amh">ተጋቢኖ</small></span><span class="pr">390</span></div>
+        <div class="menu-item"><span class="nm">Vegetable Firfir<small class="amh">ቬጀታብል ፍርፍር</small></span><span class="pr">280</span></div>
+        <div class="menu-item"><span class="nm">Fried Fish<small class="amh">የተጠበሰ አሳ</small></span><span class="pr">320</span></div>
+        <div class="menu-item"><span class="nm">Fish Goulash<small class="amh">ፊሽ ጉላሽ</small></span><span class="pr">440</span></div>
       </div>
 
       <div class="menu-block" id="cat-takeaway">
-        <div class="menu-block-head"><span class="ic">🛍️</span><h3>Take Away</h3></div>
-        <div class="menu-item"><span class="nm">Burger Bag</span><span class="pr">35</span></div>
-        <div class="menu-item"><span class="nm">Pizza Box</span><span class="pr">45</span></div>
-        <div class="menu-item"><span class="nm">Juice Cup</span><span class="pr">20</span></div>
-        <div class="menu-item"><span class="nm">Foil Bag</span><span class="pr">30</span></div>
+        <div class="menu-block-head"><span class="ic">🛍️</span><h3>Take Away</h3><span class="amh">ቴክ አዌይ</span></div>
+        <div class="menu-item"><span class="nm">Burger Bag<small class="amh">የበርገር ማሸጊያ</small></span><span class="pr">35</span></div>
+        <div class="menu-item"><span class="nm">Pizza Box<small class="amh">የፒዛ ሳጥን</small></span><span class="pr">45</span></div>
+        <div class="menu-item"><span class="nm">Juice Cup<small class="amh">የጁስ ኩባያ</small></span><span class="pr">20</span></div>
+        <div class="menu-item"><span class="nm">Foil Bag<small class="amh">ፎይል ቦርሳ</small></span><span class="pr">30</span></div>
       </div>
 
     </div>
@@ -695,9 +697,9 @@ footer{background:var(--dark);color:rgba(255,255,255,.5);padding:4rem 3rem 2rem}
         <span class="branch-flag">🎬 TikTok Famous</span>
         <div class="branch-name">Summit Fiyel Bet</div>
         <div class="branch-amh">ሰሚት ፍየል ቤት</div>
-        <div class="branch-desc">The branch that went viral — featured by Sheger Gebeta with 678K+ views. Home of the Arsenale Fruit Salad.</div>
+        <div class="branch-desc">The branch that went viral — featured by Sheger Gebeta with 678K+ views. Home of the Arsenal Fruit Salad.</div>
         <div class="branch-meta">
-          <div>📞 <a href="tel:+251945292929">094 529 2929</a></div>
+          <div>📞 <a href="tel:+251931403300">093 140 3300</a></div>
           <div>📍 <a href="https://maps.google.com/?q=Wina+Juice+Summit+Fiyel+Bet+Addis+Ababa" target="_blank" rel="noopener">Open in Google Maps</a></div>
         </div>
       </div>
@@ -821,7 +823,7 @@ footer{background:var(--dark);color:rgba(255,255,255,.5);padding:4rem 3rem 2rem}
       <a href="tel:+251905505042">Piassa · 090 550 5042</a>
       <a href="tel:+251931003300">Arada · 093 100 3300</a>
       <a href="tel:+251945292929">Addisu Gebeya · 094 529 2929</a>
-      <a href="#branches">Summit Fiyel Bet</a>
+      <a href="tel:+251931403300">Summit Fiyel Bet · 093 140 3300</a>
     </div>
     <div class="footer-col">
       <h4>Contact</h4>
