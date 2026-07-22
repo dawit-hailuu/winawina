@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ዊና ጁስ | Wina Juice — Fresh Juice House, Addis Ababa</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600;700&family=Noto+Serif+Ethiopic:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --gold:#D4A03C;--gold-light:#F0D68A;--green:#2D6A4F;--green-dark:#1B4332;--green-light:#52B788;
+  --cream:#FFF8F0;--warm-white:#FFFDF9;--dark:#1A1A1A;--text:#2C2C2C;--text-light:#6B6B6B;
+  --orange:#E07B39;--berry:#A4243B;
+  --font-display:'Playfair Display',serif;--font-body:'DM Sans',sans-serif;--font-amharic:'Noto Serif Ethiopic',serif;
+}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:var(--font-body);color:var(--text);background:var(--cream);overflow-x:hidden}
+
+/* ═══ PRELOADER ═══ */
+.preloader{position:fixed;inset:0;z-index:9999;background:var(--green-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .8s,visibility .8s}
+.preloader.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.preloader-logo{font-family:var(--font-display);font-size:3rem;color:var(--gold);animation:pulse 1.2s ease infinite alternate}
+.preloader-sub{font-family:var(--font-amharic);color:var(--gold-light);font-size:1.1rem;margin-top:.5rem;opacity:.7}
+@keyframes pulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.05);opacity:1}}
+
+/* ═══ NAV ═══ */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.2rem 3rem;display:flex;align-items:center;justify-content:space-between;transition:all .4s}
+nav.scrolled{background:rgba(27,67,50,.95);backdrop-filter:blur(20px);padding:.8rem 3rem;box-shadow:0 4px 30px rgba(0,0,0,.15)}
+.nav-logo{font-family:var(--font-display);font-size:1.6rem;font-weight:700;color:#fff;text-decoration:none;display:flex;align-items:center;gap:.5rem}
+.nav-logo .amharic{font-family:var(--font-amharic);font-size:1rem;opacity:.7;color:var(--gold-light)}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{color:rgba(255,255,255,.85);text-decoration:none;font-size:.85rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;transition:color .3s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--gold);transition:width .3s}
+.nav-links a:hover{color:#fff}.nav-links a:hover::after{width:100%}
+.nav-cta{background:var(--gold)!important;color:var(--green-dark)!important;padding:.6rem 1.4rem;border-radius:100px;font-weight:600!important;letter-spacing:.02em!important}
+.nav-cta::after{display:none!important}
+.nav-cta:hover{background:var(--gold-light)!important;transform:scale(1.03)}
+.mobile-toggle{display:none;background:none;border:none;cursor:pointer;width:30px;height:20px;position:relative;z-index:1001}
+.mobile-toggle span{display:block;width:100%;height:2px;background:#fff;position:absolute;transition:.3s;left:0}
+.mobile-toggle span:nth-child(1){top:0}.mobile-toggle span:nth-child(2){top:9px}.mobile-toggle span:nth-child(3){top:18px}
+.mobile-toggle.active span:nth-child(1){transform:rotate(45deg);top:9px}
+.mobile-toggle.active span:nth-child(2){opacity:0}
+.mobile-toggle.active span:nth-child(3){transform:rotate(-45deg);top:9px}
+
+/* ═══ HERO ═══ */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;background:var(--green-dark)}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#1B4332 0%,#2D6A4F 40%,#1B4332 100%)}
+.hero-pattern{position:absolute;inset:0;opacity:.06;background-image:
+  radial-gradient(circle at 20% 80%,var(--gold) 1px,transparent 1px),
+  radial-gradient(circle at 80% 20%,var(--gold) 1px,transparent 1px),
+  radial-gradient(circle at 50% 50%,var(--gold) .5px,transparent .5px);
+  background-size:60px 60px,80px 80px,40px 40px}
+.hero-glow{position:absolute;width:600px;height:600px;border-radius:50%;filter:blur(120px);opacity:.15}
+.hero-glow.g1{background:var(--gold);top:-200px;right:-100px}
+.hero-glow.g2{background:var(--green-light);bottom:-200px;left:-100px}
+.hero-content{position:relative;z-index:2;max-width:1300px;margin:0 auto;padding:8rem 3rem 4rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.hero-text h1{font-family:var(--font-display);font-size:clamp(2.8rem,5.5vw,5rem);color:#fff;line-height:1.08;font-weight:900}
+.hero-text h1 .gold{color:var(--gold)}
+.hero-text h1 .amharic-title{display:block;font-family:var(--font-amharic);font-size:clamp(1.5rem,3vw,2.5rem);color:var(--gold-light);margin-top:.3rem;font-weight:400;opacity:.85}
+.hero-tagline{color:rgba(255,255,255,.75);font-size:1.15rem;line-height:1.7;margin-top:1.5rem;max-width:480px;font-weight:300}
+.hero-btns{display:flex;gap:1rem;margin-top:2.5rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 2rem;border-radius:100px;font-family:var(--font-body);font-size:.9rem;font-weight:600;text-decoration:none;transition:all .3s;cursor:pointer;border:none}
+.btn-primary{background:var(--gold);color:var(--green-dark)}.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(212,160,60,.3)}
+.btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3)}.btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+.hero-stats{display:flex;gap:2.5rem;margin-top:3rem}
+.stat{text-align:left}.stat-num{font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--gold)}.stat-label{color:rgba(255,255,255,.5);font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;margin-top:.2rem}
+
+.hero-visual{position:relative;display:flex;align-items:center;justify-content:center}
+.juice-circle{width:420px;height:420px;border-radius:50%;background:radial-gradient(circle at 30% 30%,var(--green-light),var(--green-dark));position:relative;display:flex;align-items:center;justify-content:center;box-shadow:0 40px 80px rgba(0,0,0,.3)}
+.juice-circle::before{content:'';position:absolute;inset:-20px;border-radius:50%;border:1px solid rgba(212,160,60,.2);animation:spin 20s linear infinite}
+.juice-circle::after{content:'';position:absolute;inset:-50px;border-radius:50%;border:1px dashed rgba(212,160,60,.1);animation:spin 40s linear infinite reverse}
+@keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+.juice-emoji{font-size:8rem;filter:drop-shadow(0 10px 30px rgba(0,0,0,.2));animation:float 4s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
+.floating-fruit{position:absolute;font-size:2.5rem;animation:float2 5s ease-in-out infinite;filter:drop-shadow(0 5px 10px rgba(0,0,0,.15))}
+.floating-fruit:nth-child(2){top:10%;right:5%;animation-delay:-.5s;font-size:2rem}
+.floating-fruit:nth-child(3){bottom:15%;right:10%;animation-delay:-1.5s}
+.floating-fruit:nth-child(4){top:20%;left:0;animation-delay:-2s;font-size:1.8rem}
+.floating-fruit:nth-child(5){bottom:5%;left:15%;animation-delay:-3s;font-size:2.2rem}
+@keyframes float2{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-20px) rotate(10deg)}}
+
+/* ═══ MARQUEE ═══ */
+.marquee{background:var(--gold);padding:.7rem 0;overflow:hidden;white-space:nowrap}
+.marquee-track{display:flex;gap:3rem;animation:marquee 30s linear infinite;width:max-content}
+.marquee-item{font-family:var(--font-display);font-size:.85rem;font-weight:700;color:var(--green-dark);text-transform:uppercase;letter-spacing:.15em;display:flex;align-items:center;gap:.8rem}
+.marquee-item span{font-size:1.2rem}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ═══ SECTION COMMON ═══ */
+.section{padding:6rem 3rem}.section-center{max-width:1200px;margin:0 auto}
+.section-label{font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green);display:flex;align-items:center;gap:.8rem;margin-bottom:1rem}
+.section-label::before{content:'';width:30px;height:2px;background:var(--gold)}
+.section-title{font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--dark);line-height:1.15}
+.section-title .gold{color:var(--gold)}
+
+/* ═══ ABOUT ═══ */
+.about{background:var(--warm-white)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-top:3rem}
+.about-img{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,var(--green),var(--green-dark));display:flex;align-items:center;justify-content:center}
+.about-img-inner{font-size:6rem;animation:float 5s ease-in-out infinite}
+.about-badge{position:absolute;bottom:1.5rem;right:1.5rem;background:var(--gold);color:var(--green-dark);padding:.6rem 1.2rem;border-radius:12px;font-weight:700;font-size:.8rem;letter-spacing:.05em}
+.about-text p{color:var(--text-light);line-height:1.8;margin-top:1.2rem;font-size:1rem}
+.about-features{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:2rem}
+.about-feat{display:flex;align-items:start;gap:.8rem;padding:1rem;border-radius:12px;background:rgba(45,106,79,.04)}
+.about-feat-icon{width:36px;height:36px;border-radius:10px;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.about-feat-text{font-weight:600;font-size:.85rem;color:var(--dark);line-height:1.4}
+.about-feat-sub{font-weight:400;color:var(--text-light);font-size:.78rem;margin-top:.2rem}
+
+/* ═══ MENU ═══ */
+.menu{background:var(--green-dark);color:#fff;position:relative;overflow:hidden}
+.menu::before{content:'';position:absolute;inset:0;opacity:.04;background-image:radial-gradient(circle,var(--gold) 1px,transparent 1px);background-size:30px 30px}
+.menu .section-label{color:var(--gold-light)}.menu .section-title{color:#fff}
+.menu-subtitle{color:rgba(255,255,255,.6);margin-top:.8rem;max-width:500px;line-height:1.6}
+.menu-categories{display:flex;gap:.8rem;margin-top:2rem;flex-wrap:wrap}
+.menu-cat{padding:.55rem 1.4rem;border-radius:100px;border:1.5px solid rgba(255,255,255,.15);color:rgba(255,255,255,.7);font-size:.8rem;font-weight:600;cursor:pointer;transition:all .3s;background:none;font-family:var(--font-body)}
+.menu-cat.active,.menu-cat:hover{background:var(--gold);color:var(--green-dark);border-color:var(--gold)}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;margin-top:2.5rem;position:relative;z-index:1}
+.menu-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:1.8rem;transition:all .4s;cursor:pointer;backdrop-filter:blur(10px)}
+.menu-card:hover{background:rgba(255,255,255,.1);transform:translateY(-4px);border-color:rgba(212,160,60,.3);box-shadow:0 20px 40px rgba(0,0,0,.2)}
+.menu-card-icon{font-size:2.5rem;margin-bottom:1rem}
+.menu-card-name{font-family:var(--font-display);font-size:1.15rem;font-weight:700;color:#fff}
+.menu-card-desc{color:rgba(255,255,255,.5);font-size:.82rem;line-height:1.6;margin-top:.5rem}
+.menu-card-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:1.2rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.08)}
+.menu-card-price{font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:var(--gold)}
+.menu-card-tag{font-size:.65rem;font-weight:600;padding:.3rem .7rem;border-radius:100px;background:rgba(82,183,136,.15);color:var(--green-light);text-transform:uppercase;letter-spacing:.08em}
+
+/* ═══ SPECIALS ═══ */
+.specials{background:var(--cream)}
+.specials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem}
+.special-card{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:3/4;cursor:pointer;group:true}
+.special-card-bg{position:absolute;inset:0;transition:transform .6s}
+.special-card:hover .special-card-bg{transform:scale(1.05)}
+.special-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.8) 0%,transparent 60%);z-index:1}
+.special-card-content{position:absolute;bottom:0;left:0;right:0;padding:2rem;z-index:2}
+.special-card-badge{display:inline-block;background:var(--gold);color:var(--green-dark);padding:.3rem .8rem;border-radius:100px;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.8rem}
+.special-card h3{font-family:var(--font-display);font-size:1.5rem;color:#fff;font-weight:700}
+.special-card p{color:rgba(255,255,255,.7);font-size:.85rem;margin-top:.4rem;line-height:1.5}
+
+/* ═══ TESTIMONIALS ═══ */
+.testimonials{background:var(--warm-white)}
+.testimonial-track{display:flex;gap:2rem;margin-top:3rem;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:1rem;scrollbar-width:none}
+.testimonial-track::-webkit-scrollbar{display:none}
+.testimonial-card{min-width:350px;flex-shrink:0;scroll-snap-align:start;background:#fff;border-radius:16px;padding:2rem;border:1px solid rgba(0,0,0,.05);box-shadow:0 4px 20px rgba(0,0,0,.04);transition:all .3s}
+.testimonial-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.08)}
+.testimonial-stars{color:var(--gold);font-size:1rem;letter-spacing:2px;margin-bottom:1rem}
+.testimonial-text{color:var(--text-light);font-size:.92rem;line-height:1.7;font-style:italic}
+.testimonial-author{display:flex;align-items:center;gap:.8rem;margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(0,0,0,.06)}
+.testimonial-avatar{width:40px;height:40px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.85rem}
+.testimonial-name{font-weight:600;font-size:.85rem;color:var(--dark)}
+.testimonial-from{font-size:.75rem;color:var(--text-light)}
+
+/* ═══ LOCATION ═══ */
+.location{background:var(--green-dark);color:#fff;position:relative;overflow:hidden}
+.location::before{content:'';position:absolute;top:-200px;right:-200px;width:500px;height:500px;border-radius:50%;background:var(--gold);opacity:.04}
+.location .section-label{color:var(--gold-light)}.location .section-title{color:#fff}
+.location-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:3rem;align-items:start}
+.location-info{display:flex;flex-direction:column;gap:1.5rem}
+.location-item{display:flex;gap:1rem;align-items:start}
+.location-icon{width:44px;height:44px;border-radius:12px;background:rgba(212,160,60,.15);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.location-detail h4{font-size:.95rem;font-weight:600;color:#fff}.location-detail p{color:rgba(255,255,255,.6);font-size:.85rem;margin-top:.2rem;line-height:1.5}
+.location-map{border-radius:16px;overflow:hidden;aspect-ratio:4/3;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;position:relative}
+.map-placeholder{text-align:center;color:rgba(255,255,255,.4)}
+.map-placeholder .pin{font-size:3rem;margin-bottom:.5rem}
+
+/* ═══ CTA ═══ */
+.cta-section{background:var(--gold);padding:5rem 3rem;text-align:center;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;inset:0;opacity:.1;background-image:radial-gradient(circle,var(--green-dark) 1px,transparent 1px);background-size:20px 20px}
+.cta-section h2{font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);color:var(--green-dark);font-weight:900;position:relative;z-index:1}
+.cta-section .amharic-cta{display:block;font-family:var(--font-amharic);font-size:1.3rem;margin-top:.5rem;opacity:.7}
+.cta-section p{color:rgba(27,67,50,.7);margin-top:1rem;font-size:1.05rem;position:relative;z-index:1}
+.cta-btns{display:flex;gap:1rem;justify-content:center;margin-top:2rem;position:relative;z-index:1;flex-wrap:wrap}
+.btn-dark{background:var(--green-dark);color:#fff}.btn-dark:hover{background:var(--dark);transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.2)}
+.btn-white{background:#fff;color:var(--green-dark)}.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.1)}
+
+/* ═══ FOOTER ═══ */
+footer{background:var(--dark);color:rgba(255,255,255,.5);padding:4rem 3rem 2rem}
+.footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem}
+.footer-brand h3{font-family:var(--font-display);font-size:1.5rem;color:#fff;margin-bottom:.5rem}
+.footer-brand .amh{font-family:var(--font-amharic);color:var(--gold-light);font-size:.9rem}
+.footer-brand p{font-size:.85rem;line-height:1.7;margin-top:.8rem;max-width:300px}
+.footer-col h4{color:#fff;font-size:.8rem;text-transform:uppercase;letter-spacing:.15em;margin-bottom:1.2rem}
+.footer-col a{display:block;color:rgba(255,255,255,.5);text-decoration:none;font-size:.85rem;margin-bottom:.6rem;transition:color .3s}
+.footer-col a:hover{color:var(--gold)}
+.footer-bottom{max-width:1200px;margin:3rem auto 0;padding-top:2rem;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;font-size:.78rem}
+.footer-social{display:flex;gap:1rem}
+.footer-social a{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5);text-decoration:none;font-size:.85rem;transition:all .3s}
+.footer-social a:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+
+/* ═══ ANIMATIONS ═══ */
+.reveal{opacity:0;transform:translateY(40px);transition:all .8s cubic-bezier(.16,1,.3,1)}.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-40px);transition:all .8s cubic-bezier(.16,1,.3,1)}.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(40px);transition:all .8s cubic-bezier(.16,1,.3,1)}.reveal-right.visible{opacity:1;transform:translateX(0)}
+.stagger>*{opacity:0;transform:translateY(20px);transition:all .6s cubic-bezier(.16,1,.3,1)}
+.stagger.visible>*{opacity:1;transform:translateY(0)}
+.stagger.visible>*:nth-child(1){transition-delay:.05s}.stagger.visible>*:nth-child(2){transition-delay:.1s}
+.stagger.visible>*:nth-child(3){transition-delay:.15s}.stagger.visible>*:nth-child(4){transition-delay:.2s}
+.stagger.visible>*:nth-child(5){transition-delay:.25s}.stagger.visible>*:nth-child(6){transition-delay:.3s}
+.stagger.visible>*:nth-child(7){transition-delay:.35s}.stagger.visible>*:nth-child(8){transition-delay:.4s}
+.stagger.visible>*:nth-child(9){transition-delay:.45s}
+
+/* ═══ RESPONSIVE ═══ */
+@media(max-width:1024px){
+  .hero-content{grid-template-columns:1fr;text-align:center}
+  .hero-tagline{margin-left:auto;margin-right:auto}
+  .hero-btns,.hero-stats{justify-content:center}
+  .hero-visual{margin-top:2rem}.juice-circle{width:300px;height:300px}.juice-emoji{font-size:5rem}
+  .about-grid,.location-grid{grid-template-columns:1fr}
+  .specials-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  nav{padding:1rem 1.5rem}nav.scrolled{padding:.7rem 1.5rem}
+  .nav-links{display:none;position:fixed;inset:0;background:var(--green-dark);flex-direction:column;align-items:center;justify-content:center;gap:2rem}
+  .nav-links.open{display:flex}
+  .mobile-toggle{display:block}
+  .section{padding:4rem 1.5rem}
+  .hero-content{padding:7rem 1.5rem 3rem}
+  .specials-grid{grid-template-columns:1fr}
+  .menu-grid{grid-template-columns:1fr}
+  .testimonial-card{min-width:280px}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:1rem;text-align:center}
+  .hero-stats{gap:1.5rem}
+  .about-features{grid-template-columns:1fr}
+  .cta-section{padding:3.5rem 1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- PRELOADER -->
+<div class="preloader" id="preloader">
+  <div class="preloader-logo">Wina Juice</div>
+  <div class="preloader-sub">ዊና ጁስ</div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">Wina Juice <span class="amharic">ዊና ጁስ</span></a>
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="navLinks">
+    <a href="#about">About</a>
+    <a href="#menu">Menu</a>
+    <a href="#specials">Specials</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#location">Visit Us</a>
+    <a href="tel:+251911000000" class="nav-cta">Call Now</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-glow g1"></div>
+  <div class="hero-glow g2"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1>
+        Fresh. Natural. <span class="gold">Delicious.</span>
+        <span class="amharic-title">አመጋገቦ ለጤናዎ ዋና መሠረት ነው</span>
+      </h1>
+      <p class="hero-tagline">Addis Ababa's premier juice house — handcrafted blends made from the freshest Ethiopian fruits and vegetables, served daily at Summit Fiyel Bet.</p>
+      <div class="hero-btns">
+        <a href="#menu" class="btn btn-primary">☰ &nbsp;View Menu</a>
+        <a href="#location" class="btn btn-outline">📍 &nbsp;Find Us</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-num">30+</div><div class="stat-label">Juice Blends</div></div>
+        <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Fresh Daily</div></div>
+        <div class="stat"><div class="stat-num">5+</div><div class="stat-label">Years Serving</div></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="juice-circle">
+        <span class="juice-emoji">🥤</span>
+        <span class="floating-fruit">🍊</span>
+        <span class="floating-fruit">🥭</span>
+        <span class="floating-fruit">🍓</span>
+        <span class="floating-fruit">🥑</span>
+        <span class="floating-fruit">🍋</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <div class="marquee-item"><span>🍊</span>Fresh Orange</div>
+    <div class="marquee-item"><span>🥭</span>Mango Delight</div>
+    <div class="marquee-item"><span>🥑</span>Avocado Smoothie</div>
+    <div class="marquee-item"><span>🍓</span>Berry Blast</div>
+    <div class="marquee-item"><span>🥕</span>Carrot Boost</div>
+    <div class="marquee-item"><span>🍌</span>Banana Power</div>
+    <div class="marquee-item"><span>🍍</span>Pineapple Crush</div>
+    <div class="marquee-item"><span>🥝</span>Kiwi Refresh</div>
+    <div class="marquee-item"><span>🍊</span>Fresh Orange</div>
+    <div class="marquee-item"><span>🥭</span>Mango Delight</div>
+    <div class="marquee-item"><span>🥑</span>Avocado Smoothie</div>
+    <div class="marquee-item"><span>🍓</span>Berry Blast</div>
+    <div class="marquee-item"><span>🥕</span>Carrot Boost</div>
+    <div class="marquee-item"><span>🍌</span>Banana Power</div>
+    <div class="marquee-item"><span>🍍</span>Pineapple Crush</div>
+    <div class="marquee-item"><span>🥝</span>Kiwi Refresh</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about section" id="about">
+  <div class="section-center">
+    <div class="about-grid">
+      <div class="about-img reveal-left">
+        <div class="about-img-inner">🍹</div>
+        <div class="about-badge">EST. ADDIS ABABA</div>
+      </div>
+      <div class="reveal-right">
+        <div class="section-label">Our Story</div>
+        <h2 class="section-title">Crafted With Love,<br>Served With <span class="gold">Passion</span></h2>
+        <p>At Wina Juice, we believe that what you eat is the foundation of your health — <em>አመጋገቦ ለጤናዎ ዋና መሠረት ነው</em>. Every glass we serve is a commitment to freshness, flavor, and your wellbeing.</p>
+        <p>Located at Summit Fiyel Bet in the heart of Addis Ababa, we source the finest Ethiopian fruits and vegetables to craft blends that nourish body and soul. From classic orange juice to our signature avocado smoothies, every sip tells a story.</p>
+        <div class="about-features stagger">
+          <div class="about-feat">
+            <div class="about-feat-icon">🌱</div>
+            <div><div class="about-feat-text">Locally Sourced</div><div class="about-feat-sub">Fresh from Ethiopian farms</div></div>
+          </div>
+          <div class="about-feat">
+            <div class="about-feat-icon">🧊</div>
+            <div><div class="about-feat-text">Made to Order</div><div class="about-feat-sub">Blended fresh every time</div></div>
+          </div>
+          <div class="about-feat">
+            <div class="about-feat-icon">🚫</div>
+            <div><div class="about-feat-text">No Preservatives</div><div class="about-feat-sub">100% natural ingredients</div></div>
+          </div>
+          <div class="about-feat">
+            <div class="about-feat-icon">❤️</div>
+            <div><div class="about-feat-text">Health First</div><div class="about-feat-sub">Nutrition in every glass</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="menu section" id="menu">
+  <div class="section-center">
+    <div class="reveal">
+      <div class="section-label">Our Menu</div>
+      <h2 class="section-title">Taste the <span class="gold">Rainbow</span></h2>
+      <p class="menu-subtitle">From classic single fruits to our signature multi-layer blends — there's something for every palate.</p>
+    </div>
+    <div class="menu-categories reveal" style="transition-delay:.1s">
+      <button class="menu-cat active" data-cat="all">All</button>
+      <button class="menu-cat" data-cat="classic">Classic Juices</button>
+      <button class="menu-cat" data-cat="smoothie">Smoothies</button>
+      <button class="menu-cat" data-cat="special">Signature Blends</button>
+      <button class="menu-cat" data-cat="health">Health Shots</button>
+    </div>
+    <div class="menu-grid stagger" id="menuGrid">
+      <div class="menu-card" data-cat="classic">
+        <div class="menu-card-icon">🍊</div>
+        <div class="menu-card-name">Fresh Orange</div>
+        <div class="menu-card-desc">Hand-squeezed premium oranges, served chilled. Pure sunshine in a glass.</div>
+        <div class="menu-card-bottom"><span class="menu-card-price">85 ETB</span><span class="menu-card-tag">Popular</span></div>
+      </div>
+      <div class="menu-card" data-cat="classic">
+        <div class="menu-card-icon">🥭</div>
+        <div class="menu-card-name">Mango Paradise</div>
+        <div class="menu-card-desc">Ripe Ethiopian mangoes blended to creamy perfection. Seasonal favorite.</div>
+        <div class="menu-card-bottom"><span class="menu-card-price">90 ETB</span><span class="menu-card-tag">Seasonal</span></div>
+      </div>
+      <div class="menu-card" data-cat="smoothie">
+        <div class="menu-card-icon">🥑</div>
+        <div class="menu-card-name">Avocado Dream</div>
+        <div class="menu-card-desc">Silky avocado blended with a hint of honey and lime. Rich and satisfying.</div>
+        <div class="menu-card-bottom"><span class="menu-card-price">110 ETB</span><span class="menu-card-tag">Bestseller</span></div>
+      </div>
+      <div class="menu-card" data-cat="special">
+        <div class="menu-card-icon">🌈</div>
+        <div class="menu-card-name">Wina Special Layer</div>
+        <div class="menu-card-desc">Our signature — mango, avocado, strawberry, and guava layered in a glass.</div>
+        <div class="menu-card-bottom"><span class="menu-card-price">150 ETB</span><span class="menu-card-tag">Signature</span></div>
+      </div>
+      <div class="menu-card" data-cat="smoothie">
+        <div class="menu-card-icon">🍌</div>
+        <div class="menu-card-name">Banana Power Shake</div>
+        <div class="menu-card-desc">Banana, peanut butter, and oat milk — the ultimate energy boost.</div>
+        <div class="menu-card-bottom"><span class="menu-card-price">120 ETB</span><span class="menu-card-tag">Energy</span></div>
+      </div>
+      <div class="menu-card" data-cat="classic">
+        <div class="menu-card-icon">🍓</div>
+        <div class="menu-card-name">Strawberry Bliss</div>
+        <div class="menu-card-desc">Fresh strawberries and a splash of lemon. Light, sweet, and refreshing.</div>
+        <div class="menu-card-bottom"><span class="menu-card-price">95 ETB</span><span class="menu-card-tag">Refreshing</span></div>
+      </div>
+      <div class="menu-card" data-cat="health">
+        <div class="menu-card-icon">🥕</div>
+        <div class="menu-card-name">Detox Booster</div>
+        <div class="menu-card-desc">Carrot, ginger, turmeric, and orange — a powerful immunity blend.</div>
+        <div class="menu-card-bottom"><span class="menu-card-price">100 ETB</span><span class="menu-card-tag">Wellness</span></div>
+      </div>
+      <div class="menu-card" data-cat="special">
+        <div class="menu-card-icon">🍹</div>
+        <div class="menu-card-name">Tropical Sunset</div>
+        <div class="menu-card-desc">Papaya, passion fruit, and pineapple — a tropical escape in Addis.</div>
+        <div class="menu-card-bottom"><span class="menu-card-price">130 ETB</span><span class="menu-card-tag">New</span></div>
+      </div>
+      <div class="menu-card" data-cat="health">
+        <div class="menu-card-icon">🥬</div>
+        <div class="menu-card-name">Green Vitality</div>
+        <div class="menu-card-desc">Spinach, apple, cucumber, and mint — clean, green, and energising.</div>
+        <div class="menu-card-bottom"><span class="menu-card-price">105 ETB</span><span class="menu-card-tag">Detox</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIALS -->
+<section class="specials section" id="specials">
+  <div class="section-center">
+    <div class="reveal">
+      <div class="section-label">Why Choose Us</div>
+      <h2 class="section-title">The Wina <span class="gold">Difference</span></h2>
+    </div>
+    <div class="specials-grid stagger">
+      <div class="special-card">
+        <div class="special-card-bg" style="background:linear-gradient(135deg,#2D6A4F,#1B4332)"></div>
+        <div class="special-card-overlay"></div>
+        <div class="special-card-content">
+          <div class="special-card-badge">Quality Promise</div>
+          <h3>Farm to Glass</h3>
+          <p>We source directly from local farms every morning — nothing sits, nothing waits. Your juice is always made from today's harvest.</p>
+        </div>
+      </div>
+      <div class="special-card">
+        <div class="special-card-bg" style="background:linear-gradient(135deg,#D4A03C,#E07B39)"></div>
+        <div class="special-card-overlay"></div>
+        <div class="special-card-content">
+          <div class="special-card-badge">Fruit & Veg Market</div>
+          <h3>Fresh Supermarket</h3>
+          <p>Beyond juices, explore our selection of premium fruits and vegetables — take the freshness home with you.</p>
+        </div>
+      </div>
+      <div class="special-card">
+        <div class="special-card-bg" style="background:linear-gradient(135deg,#A4243B,#6C3461)"></div>
+        <div class="special-card-overlay"></div>
+        <div class="special-card-content">
+          <div class="special-card-badge">Catering</div>
+          <h3>Events & Parties</h3>
+          <p>Planning a gathering? Let Wina Juice bring the freshness to your event with custom juice bars and platters.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials section" id="reviews">
+  <div class="section-center">
+    <div class="reveal">
+      <div class="section-label">Reviews</div>
+      <h2 class="section-title">What Our Guests <span class="gold">Say</span></h2>
+    </div>
+    <div class="testimonial-track">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-text">"The avocado smoothie here is unmatched in Addis. Creamy, fresh, and you can taste the quality. My go-to spot every morning before work."</div>
+        <div class="testimonial-author"><div class="testimonial-avatar">A</div><div><div class="testimonial-name">Abebe K.</div><div class="testimonial-from">Google Review</div></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-text">"I love their layer juice! The presentation is beautiful and the taste is incredible. The staff is always welcoming and friendly."</div>
+        <div class="testimonial-author"><div class="testimonial-avatar">S</div><div><div class="testimonial-name">Sara M.</div><div class="testimonial-from">Google Review</div></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★☆</div>
+        <div class="testimonial-text">"Great variety of fresh juices at reasonable prices. The fruit market section is also very convenient. A hidden gem in Summit!"</div>
+        <div class="testimonial-author"><div class="testimonial-avatar">D</div><div><div class="testimonial-name">Daniel T.</div><div class="testimonial-from">Google Review</div></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-text">"Best detox juice in the city! The ginger-carrot combo is perfect after a long week. They really care about health here."</div>
+        <div class="testimonial-author"><div class="testimonial-avatar">M</div><div><div class="testimonial-name">Meron B.</div><div class="testimonial-from">Facebook</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="location section" id="location">
+  <div class="section-center">
+    <div class="reveal">
+      <div class="section-label">Find Us</div>
+      <h2 class="section-title">Visit <span class="gold">Wina Juice</span></h2>
+    </div>
+    <div class="location-grid">
+      <div class="location-info stagger">
+        <div class="location-item">
+          <div class="location-icon">📍</div>
+          <div class="location-detail"><h4>Address</h4><p>Summit Fiyel Bet, Addis Ababa, Ethiopia</p></div>
+        </div>
+        <div class="location-item">
+          <div class="location-icon">🕐</div>
+          <div class="location-detail"><h4>Opening Hours</h4><p>Monday – Saturday: 7:00 AM – 9:00 PM<br>Sunday: 8:00 AM – 8:00 PM</p></div>
+        </div>
+        <div class="location-item">
+          <div class="location-icon">📞</div>
+          <div class="location-detail"><h4>Phone</h4><p>+251 911 000 000</p></div>
+        </div>
+        <div class="location-item">
+          <div class="location-icon">📱</div>
+          <div class="location-detail"><h4>Social Media</h4><p>Facebook: WINA JUICE ዊና ጁስ<br>820+ followers</p></div>
+        </div>
+        <a href="https://maps.google.com/?q=Summit+Fiyel+Bet+Addis+Ababa" target="_blank" class="btn btn-primary" style="align-self:start;margin-top:.5rem">📍 &nbsp;Get Directions</a>
+      </div>
+      <div class="location-map reveal-right">
+        <div class="map-placeholder">
+          <div class="pin">📍</div>
+          <div style="font-size:.9rem;font-weight:600;color:rgba(255,255,255,.7)">Summit Fiyel Bet</div>
+          <div style="font-size:.8rem;margin-top:.3rem">Addis Ababa, Ethiopia</div>
+          <a href="https://maps.google.com/?q=Summit+Fiyel+Bet+Addis+Ababa" target="_blank" style="display:inline-block;margin-top:1rem;padding:.5rem 1.2rem;background:var(--gold);color:var(--green-dark);border-radius:100px;font-size:.8rem;font-weight:600;text-decoration:none">Open in Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2 class="reveal">Your Health Starts With<br>What You Drink<span class="amharic-cta">አመጋገቦ ለጤናዎ ዋና መሠረት ነው!!</span></h2>
+  <p class="reveal" style="transition-delay:.1s">Visit Wina Juice today and taste the difference freshness makes.</p>
+  <div class="cta-btns reveal" style="transition-delay:.2s">
+    <a href="tel:+251911000000" class="btn btn-dark">📞 &nbsp;Call to Order</a>
+    <a href="#menu" class="btn btn-white">☰ &nbsp;See Full Menu</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h3>Wina Juice</h3>
+      <div class="amh">ዊና ጁስ</div>
+      <p>Addis Ababa's favorite juice house. Fresh fruits, vegetables, and handcrafted blends — served with love since day one.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="#about">About Us</a>
+      <a href="#menu">Our Menu</a>
+      <a href="#specials">Specials</a>
+      <a href="#reviews">Reviews</a>
+    </div>
+    <div class="footer-col">
+      <h4>Offerings</h4>
+      <a href="#menu">Fresh Juices</a>
+      <a href="#menu">Smoothies</a>
+      <a href="#menu">Health Shots</a>
+      <a href="#specials">Catering</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="tel:+251911000000">+251 911 000 000</a>
+      <a href="https://facebook.com/WinaJuices" target="_blank">Facebook</a>
+      <a href="#location">Directions</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Wina Juice ዊና ጁስ. All rights reserved.</span>
+    <div class="footer-social">
+      <a href="https://facebook.com/WinaJuices" target="_blank" title="Facebook">f</a>
+      <a href="https://t.me/" target="_blank" title="Telegram">✈</a>
+      <a href="tel:+251911000000" title="Call">☎</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Preloader
+window.addEventListener('load',()=>{setTimeout(()=>{document.getElementById('preloader').classList.add('hidden')},800)});
+
+// Nav scroll
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)});
+
+// Mobile menu
+const toggle=document.getElementById('mobileToggle'),links=document.getElementById('navLinks');
+toggle.addEventListener('click',()=>{toggle.classList.toggle('active');links.classList.toggle('open')});
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{toggle.classList.remove('active');links.classList.remove('open')}));
+
+// Scroll reveal
+const revealEls=document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.stagger');
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:0.15,rootMargin:'0px 0px -40px 0px'});
+revealEls.forEach(el=>observer.observe(el));
+
+// Menu filter
+const cats=document.querySelectorAll('.menu-cat');
+const cards=document.querySelectorAll('.menu-card');
+cats.forEach(c=>c.addEventListener('click',()=>{
+  cats.forEach(x=>x.classList.remove('active'));c.classList.add('active');
+  const cat=c.dataset.cat;
+  cards.forEach((card,i)=>{
+    if(cat==='all'||card.dataset.cat===cat){card.style.display='';card.style.animation=`fadeIn .4s ${i*.05}s both`}
+    else{card.style.display='none'}
+  });
+}));
+
+// Fade in keyframe
+const style=document.createElement('style');
+style.textContent='@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}';
+document.head.appendChild(style);
+</script>
+</body>
+</html>
